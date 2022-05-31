@@ -9,8 +9,22 @@ import SwiftUI
 import KingfisherSwiftUI
 
 public struct ZoomPhotoView : View {
-    public init() {
-        
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    @Environment(\.presentationMode) private var presentationMode
+    
+    @Binding var index : Int
+    @Binding var urls : [String]
+    
+    var scale : CGFloat
+    
+    public init(
+        index: Binding<Int>,
+        urls : Binding<[String]>,
+        scale : CGFloat = 1.0
+    ) {
+        self._index = index
+        self._urls = urls
+        self.scale = scale 
     }
     
     public var body : some View {
