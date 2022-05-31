@@ -30,7 +30,6 @@ public struct ZoomPhotoView : View {
         ZStack {
             
             Color.black
-//            Color(hexString: "#000000")
             GeometryReader { geometry in
                 if self.scale > 1 {
                     ScrollView ([.vertical, .horizontal], showsIndicators: false){
@@ -72,18 +71,18 @@ public struct ZoomPhotoView : View {
             VStack (spacing:0) {
                 ZStack {
                     HStack(spacing:0) {
-//                    Button(action:closeAction) {
-//                        EmptyView()
-//                    }.buttonStyle(DDButtonStyle(change: { state in
-//                        Image("close_white")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width:24, height:24)
-//                    }))
-//                    .padding(.horizontal, 16)
-//                    .frame(height:48)
-//                        Spacer()
-//                    }
+                    Button(action:closeAction) {
+                        EmptyView()
+                    }.buttonStyle(LSSButtonStyle(change: { state in
+                        Image("close_white")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:24, height:24)
+                    }))
+                    .padding(.horizontal, 16)
+                    .frame(height:48)
+                        Spacer()
+                    }
                     
                     Text("\(index + 1)/\(self.urls.count)")
 //                        .apply18Bold()
@@ -98,6 +97,7 @@ public struct ZoomPhotoView : View {
         }
         .gesture(MagnificationGesture()
             .onChanged({ scale in
+
                 if scale >= 1 {
                     self.scale = scale
                 }else {
@@ -149,7 +149,6 @@ public struct ZoomPhotoView : View {
         }
 
         .edgesIgnoringSafeArea(.all)
-    }
     }
     
 
