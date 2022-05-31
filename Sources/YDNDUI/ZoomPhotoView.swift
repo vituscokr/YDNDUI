@@ -6,7 +6,17 @@
 //
 
 import SwiftUI
-import Kingfisher
+import KingfisherSwiftUI
+
+public struct ZoomPhotoView : View {
+    public init() {
+        
+    }
+    
+    public var body : some View {
+        Text("hi")
+    }
+}
 /*
 public struct ZoomPhotoView : View {
 //    @Environment(\.safeAreaInsets) private var safeAreaInsets
