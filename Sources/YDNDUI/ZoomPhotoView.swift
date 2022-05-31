@@ -8,6 +8,34 @@
 import SwiftUI
 import KingfisherSwiftUI
 
+/**
+ 포토 줌 뷰입니다.
+ 
+ ~~~
+ Assets 에 포함되어야할 이미지 "close_white"
+ ~~~
+ 
+Example
+~~~
+ @State var index : Int = 0
+ @State var urls = [
+     "https://www.codingfactory.net/wp-content/uploads/abc.jpg",
+     "http://gangnamstar.co.kr/files/attach/images/119/904/027/99b6e593de5df80fd08141a0db2c2166.jpg",
+    "https://www.codingfactory.net/wp-content/uploads/abc.jpg"
+ ]
+ @State var scale:CGFloat = 1.0
+~~~
+ 
+ ~~~
+ ZoomPhotoView(
+     index: $index,
+     urls : $urls,
+     scale: $scale
+ )
+ ~~~
+
+ */
+
 public struct ZoomPhotoView : View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     @Environment(\.presentationMode) private var presentationMode
@@ -85,7 +113,7 @@ public struct ZoomPhotoView : View {
                     }
                     
                     Text("\(index + 1)/\(self.urls.count)")
-//                        .apply18Bold()
+                        .font(.system(size: 18, weight: .bold, design: .default))
                         .foregroundColor(Color.white)
                 }
                 .frame(height:48)
