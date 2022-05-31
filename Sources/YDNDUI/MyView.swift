@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct MyView: View {
+public struct MyView: View {
     
-    @State var scale : CGFloat = 1.0
+    public init() {
+        
+    }
     
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    public var body: some View {
+        Text("TEST")
     }
 }
 
