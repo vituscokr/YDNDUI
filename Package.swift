@@ -26,7 +26,8 @@ let package = Package(
         .target(
             name: "YDNDUI",
             dependencies: [
-                .product(name: "KingfisherSwiftUI", package: "Kingfisher")
+                "Kingfisher"
+//                .product(name: "KingfisherSwiftUI", package: "Kingfisher")
                 //.product(name: "KingfisherSwiftUI", package: "Kingfisher")
             ]),
         .testTarget(

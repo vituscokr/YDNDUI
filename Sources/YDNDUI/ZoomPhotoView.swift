@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import KingfisherSwiftUI
+import Kingfisher
 
 /**
  포토 줌 뷰입니다.
@@ -35,8 +35,10 @@ Example
  ~~~
 
  */
-
+/*
 public struct ZoomPhotoView : View {
+
+    
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     @Environment(\.presentationMode) private var presentationMode
     
@@ -185,3 +187,4 @@ public struct ZoomPhotoView : View {
         self.presentationMode.wrappedValue.dismiss()
     }
 }
+*/
