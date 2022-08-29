@@ -13,7 +13,7 @@ public struct CheckBoxView: View {
     
     let imageSize :CGSize
     
-    init(checked : Binding<Bool> ,
+    public init(checked : Binding<Bool> ,
          imageSize: CGSize = CGSize(width: 32, height: 32)) {
         self._checked = checked
         self.imageSize = imageSize
