@@ -26,4 +26,8 @@ public struct CheckBoxData: Identifiable {
     }
     
     
+    mutating func toggle() {
+        self.isChecked = isChecked ? false : true
+    }
+    
 }
