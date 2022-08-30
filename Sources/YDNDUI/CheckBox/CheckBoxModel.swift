@@ -9,9 +9,9 @@ import SwiftUI
 
 public class CheckBoxModel : ObservableObject {
     
-    @Published var items: [CheckBoxData]
+    public @Published var items: [CheckBoxData]
 
-    public init() {
-        items = [CheckBoxData]()
+    public init(items: [CheckBoxData] ) {
+        self.items = items 
     }
 }
