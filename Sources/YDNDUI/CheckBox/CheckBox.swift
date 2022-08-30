@@ -10,7 +10,6 @@ import SwiftUI
 public struct CheckBoxView: View {
     
     @Binding var checked : Bool
-    
     let imageSize :CGSize
     
     public init(checked : Binding<Bool> ,
