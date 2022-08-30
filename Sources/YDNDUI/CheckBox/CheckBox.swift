@@ -9,15 +9,15 @@ import SwiftUI
 
 public struct CheckBoxView: View {
     
-    @State var data : CheckBoxData
+    @State public var data : CheckBoxData
     let imageSize :CGSize
     var action: () -> ()
 
-    public init(data: State<CheckBoxData>,
+    public init(data: CheckBoxData,
                 imageSize: CGSize = CGSize(width: 32, height: 32),
                 action : @escaping () -> Void  ) {
        
-        self._data = data
+        _data = State(initialValue: data) 
         self.imageSize = imageSize
         self.action = action
     }
