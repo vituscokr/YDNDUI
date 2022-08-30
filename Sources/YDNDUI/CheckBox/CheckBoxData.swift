@@ -14,7 +14,7 @@ public struct CheckBoxData: Identifiable {
     var title: String
     var index : Int
     var value: String
-    var isChecked: Bool
+    public var isChecked: Bool
     
     
     public init() {
