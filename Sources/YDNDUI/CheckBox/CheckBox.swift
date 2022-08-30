@@ -9,25 +9,38 @@ import SwiftUI
 
 public struct CheckBoxView: View {
     
-    @Binding var checked : Bool
+    @State var isChecked: Bool = false
     let imageSize :CGSize
+    var action: () -> ()
     
-    public init(checked : Binding<Bool> ,
-         imageSize: CGSize = CGSize(width: 32, height: 32)) {
-        self._checked = checked
+    public init(isChecked : Bool ,
+         imageSize: CGSize = CGSize(width: 32, height: 32),
+                action : @escaping () -> Void  ) {
+        self.isChecked = isChecked
         self.imageSize = imageSize
+        self.action = action
     }
     
     public var body: some View {
-        Image( checked ? "checked" : "unchecked")
-            .resizable()
-            .scaledToFit()
-            .frame(width: imageSize.width, height: imageSize.height, alignment: .center)
+        Button(action: action){
+            EmptyView()
+        }
+        .buttonStyle(LSSButtonStyle(change: { state in
+            Image( isChecked ? "checked" : "unchecked")
+                .resizable()
+                .scaledToFit()
+                .frame(width: imageSize.width, height: imageSize.height, alignment: .center)
+        }))
     }
 }
 
 struct CheckBoxView_Previews: PreviewProvider {
+    
+    @State static var isChecked : Bool = false
     static var previews: some View {
-        CheckBoxView(checked: .constant(false))
+        CheckBoxView(isChecked: isChecked) {
+            
+        }
     }
 }
+
