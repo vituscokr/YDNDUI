@@ -29,7 +29,8 @@ let package = Package(
                 "Kingfisher"
 //                .product(name: "KingfisherSwiftUI", package: "Kingfisher")
                 //.product(name: "KingfisherSwiftUI", package: "Kingfisher")
-            ]),
+            ],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "YDNDUITests",
             dependencies: ["YDNDUI"]),
